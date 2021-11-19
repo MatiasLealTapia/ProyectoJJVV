@@ -10,5 +10,8 @@ package ProyectoJJVV;
  * @author matia
  */
 public class Usuario {
-    //Comentario nuevo
+    private int id;
+    private String usuario;
+    private String nombre;
+    private
 }
