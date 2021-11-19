@@ -102,6 +102,9 @@ public class VentanaMenu extends javax.swing.JFrame {
                 new VentanaMenu().setVisible(true);
             }
         });
+        Usuario usuarionone;
+        usuarionone = new Usuario(12345678, 'K', "pedrito", "pedrito123@gmail.com", "123456abc", "25/04/1990");
+        usuarionone.toString();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
