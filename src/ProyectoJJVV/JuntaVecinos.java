@@ -9,6 +9,7 @@ package ProyectoJJVV;
  *
  * @author matia
  */
+//hOlA
 public class JuntaVecinos {
     private int id;
     private String region;
