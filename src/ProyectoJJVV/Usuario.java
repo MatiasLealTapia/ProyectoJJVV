@@ -5,13 +5,17 @@
  */
 package ProyectoJJVV;
 
+import java.util.Date;
+
 /**
  *
  * @author matia
  */
 public class Usuario {
-    private int id;
-    private String usuario;
+    private int rut;
     private String nombre;
-    private
+    private String correo;
+    private String clave;
+    private Date nacimiento;
+    
 }
