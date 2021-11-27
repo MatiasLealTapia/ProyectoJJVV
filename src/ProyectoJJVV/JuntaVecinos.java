@@ -10,6 +10,7 @@ package ProyectoJJVV;
  * @author matia
  */
 public class JuntaVecinos {
+
     private int id;
     private String region;
     private String provincia;
@@ -71,7 +72,5 @@ public class JuntaVecinos {
     public String toString() {
         return "JuntaVecinos{" + "id=" + id + ", region=" + region + ", provincia=" + provincia + ", comuna=" + comuna + ", barrioPoblacion=" + barrioPoblacion + '}';
     }
-    
-    
-    
+
 }

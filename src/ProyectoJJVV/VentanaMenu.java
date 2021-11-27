@@ -29,12 +29,26 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        miIniciarSesion = new javax.swing.JMenuItem();
+        miJuntaVecinal = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("File");
+
+        miIniciarSesion.setText("Iniciar Sesión");
+        miIniciarSesion.setToolTipText("");
+        miIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miIniciarSesionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miIniciarSesion);
+
+        miJuntaVecinal.setText("Junta Vecinal");
+        jMenu1.add(miJuntaVecinal);
 
         miSalir.setText("Salir");
         miSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -55,11 +69,11 @@ public class VentanaMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 971, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 358, Short.MAX_VALUE)
         );
 
         pack();
@@ -68,6 +82,10 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void miSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miSalirActionPerformed
+
+    private void miIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miIniciarSesionActionPerformed
+        new VentanaInicioSesion().setVisible(true);
+    }//GEN-LAST:event_miIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,13 +122,14 @@ public class VentanaMenu extends javax.swing.JFrame {
         });
         Usuario usuarionone;
         usuarionone = new Usuario(12345678, 'K', "pedrito", "pedrito123@gmail.com", "123456abc", "25/04/1990");
-        usuarionone.toString();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem miIniciarSesion;
+    private javax.swing.JMenuItem miJuntaVecinal;
     private javax.swing.JMenuItem miSalir;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,6 +10,7 @@ package ProyectoJJVV;
  * @author matia
  */
 public class Certificado {
+
     private int numFolio;
     private String fecha;
     private String tipoCertificado;
@@ -51,7 +52,5 @@ public class Certificado {
     public String toString() {
         return "Certificado{" + "numFolio=" + numFolio + ", fecha=" + fecha + ", tipoCertificado=" + tipoCertificado + '}';
     }
-    
-    
-    
+
 }

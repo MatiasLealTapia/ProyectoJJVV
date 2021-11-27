@@ -12,6 +12,7 @@ import java.util.Date;
  * @author matia
  */
 public class Usuario {
+
     private int rut;
     private char dv;
     private String nombre;
@@ -84,7 +85,4 @@ public class Usuario {
         return "Usuario{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", correo=" + correo + ", clave=" + clave + ", nacimiento=" + nacimiento + '}';
     }
 
-    
-
-        
 }
