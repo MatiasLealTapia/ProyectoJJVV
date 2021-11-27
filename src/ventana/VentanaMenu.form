@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="miIniciarSesion">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Crear Certificado"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
@@ -20,7 +20,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miJuntaVecinal">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Junta Vecinal"/>
+                <Property name="text" type="java.lang.String" value="Filtrar JJVV"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miSalir">

@@ -9,12 +9,12 @@ package ventana;
  *
  * @author matia
  */
-public class VentanaInicioSesion extends javax.swing.JFrame {
+public class VentanaGenerarCertificado extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaInicioSesion
      */
-    public VentanaInicioSesion() {
+    public VentanaGenerarCertificado() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.setText("Generar Certificado");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -90,11 +90,13 @@ public class VentanaInicioSesion extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnIniciarSesion)
                             .addComponent(jPasswordField1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(btnSalir)))
+                        .addComponent(btnSalir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(btnIniciarSesion)))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
