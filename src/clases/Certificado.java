@@ -13,15 +13,17 @@ public class Certificado {
 
     private int numFolio;
     private String fecha;
-    private String tipoCertificado;
+    private Usuario usuario;
+    private JuntaVecinos jV;
 
     public Certificado() {
     }
 
-    public Certificado(int numFolio, String fecha, String tipoCertificado) {
+    public Certificado(int numFolio, String fecha, Usuario usuario, JuntaVecinos jV) {
         this.numFolio = numFolio;
         this.fecha = fecha;
-        this.tipoCertificado = tipoCertificado;
+        this.usuario = usuario;
+        this.jV = jV;
     }
 
     public int getNumFolio() {
@@ -40,17 +42,25 @@ public class Certificado {
         this.fecha = fecha;
     }
 
-    public String getTipoCertificado() {
-        return tipoCertificado;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setTipoCertificado(String tipoCertificado) {
-        this.tipoCertificado = tipoCertificado;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public JuntaVecinos getjV() {
+        return jV;
+    }
+
+    public void setjV(JuntaVecinos jV) {
+        this.jV = jV;
     }
 
     @Override
     public String toString() {
-        return "Certificado{" + "numFolio=" + numFolio + ", fecha=" + fecha + ", tipoCertificado=" + tipoCertificado + '}';
+        return "Certificado{" + "numFolio=" + numFolio + ", fecha=" + fecha + ", usuario=" + usuario + ", jV=" + jV + '}';
     }
 
 }
