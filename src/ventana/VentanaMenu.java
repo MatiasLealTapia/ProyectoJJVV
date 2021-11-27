@@ -33,7 +33,6 @@ public class VentanaMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         miIniciarSesion = new javax.swing.JMenuItem();
         miJuntaVecinal = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
@@ -52,14 +51,6 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         miJuntaVecinal.setText("Junta Vecinal");
         jMenu1.add(miJuntaVecinal);
-
-        jMenuItem1.setText("prueba");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         miSalir.setText("Salir");
         miSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -97,10 +88,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void miIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miIniciarSesionActionPerformed
         new VentanaInicioSesion().setVisible(true);
     }//GEN-LAST:event_miIniciarSesionActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,7 +128,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem miIniciarSesion;
     private javax.swing.JMenuItem miJuntaVecinal;
     private javax.swing.JMenuItem miSalir;
