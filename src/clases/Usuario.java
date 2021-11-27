@@ -15,7 +15,10 @@ public class Usuario {
 
     private int rut;
     private char dv;
-    private String nombre;
+    private String pNombre;
+    private String sNombre;
+    private String aPaterno;
+    private String aMaterno;
     private String correo;
     private String clave;
     private String nacimiento;
@@ -23,10 +26,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int rut, char dv, String nombre, String correo, String clave, String nacimiento) {
+    public Usuario(int rut, char dv, String pNombre, String sNombre, String aPaterno, String aMaterno, String correo, String clave, String nacimiento) {
         this.rut = rut;
         this.dv = dv;
-        this.nombre = nombre;
+        this.pNombre = pNombre;
+        this.sNombre = sNombre;
+        this.aPaterno = aPaterno;
+        this.aMaterno = aMaterno;
         this.correo = correo;
         this.clave = clave;
         this.nacimiento = nacimiento;
@@ -48,12 +54,36 @@ public class Usuario {
         this.dv = dv;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getpNombre() {
+        return pNombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setpNombre(String pNombre) {
+        this.pNombre = pNombre;
+    }
+
+    public String getsNombre() {
+        return sNombre;
+    }
+
+    public void setsNombre(String sNombre) {
+        this.sNombre = sNombre;
+    }
+
+    public String getaPaterno() {
+        return aPaterno;
+    }
+
+    public void setaPaterno(String aPaterno) {
+        this.aPaterno = aPaterno;
+    }
+
+    public String getaMaterno() {
+        return aMaterno;
+    }
+
+    public void setaMaterno(String aMaterno) {
+        this.aMaterno = aMaterno;
     }
 
     public String getCorreo() {
@@ -82,7 +112,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", correo=" + correo + ", clave=" + clave + ", nacimiento=" + nacimiento + '}';
+        return "Usuario{" + "rut=" + rut + ", dv=" + dv + ", pNombre=" + pNombre + ", sNombre=" + sNombre + ", aPaterno=" + aPaterno + ", aMaterno=" + aMaterno + ", correo=" + correo + ", clave=" + clave + ", nacimiento=" + nacimiento + '}';
     }
 
 }
