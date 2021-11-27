@@ -50,6 +50,11 @@ public class VentanaMenu extends javax.swing.JFrame {
         jMenu1.add(miIniciarSesion);
 
         miJuntaVecinal.setText("Filtrar JJVV");
+        miJuntaVecinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miJuntaVecinalActionPerformed(evt);
+            }
+        });
         jMenu1.add(miJuntaVecinal);
 
         miSalir.setText("Salir");
@@ -88,6 +93,10 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void miIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miIniciarSesionActionPerformed
         new VentanaGenerarCertificado().setVisible(true);
     }//GEN-LAST:event_miIniciarSesionActionPerformed
+
+    private void miJuntaVecinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miJuntaVecinalActionPerformed
+        new VentanaFiltrarDatos().setVisible(true);
+    }//GEN-LAST:event_miJuntaVecinalActionPerformed
 
     /**
      * @param args the command line arguments
