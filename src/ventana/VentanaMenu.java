@@ -5,7 +5,7 @@
  */
 package ventana;
 
-import Class.Usuario;
+import clases.Usuario;
 
 /**
  *
