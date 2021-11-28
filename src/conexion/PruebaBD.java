@@ -9,6 +9,12 @@ package conexion;
  *
  * @author matia
  */
-public class BD {
-    
+public class PruebaBD {
+
+    public static void main(String[] args) {
+        ConexionBD cbd = new ConexionBD();
+
+        cbd.obtenerConexion();
+    }
+
 }
