@@ -14,16 +14,16 @@ import java.sql.SQLException;
  * @author matia
  */
 public class ConexionBD {
-    
+
     public Connection obtenerConexion() {
         Connection cnx = null;
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectojjvv","root","root");
-            System.out.println("Conexión exitosa");            
-        }catch (SQLException e) {
-            System.out.println("Error de conexion"+e.getMessage());
-        }catch (Exception ex){
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectojjvv", "root", "root");
+            System.out.println("Conexión exitosa");
+        } catch (SQLException e) {
+            System.out.println("Error de conexion" + e.getMessage());
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return cnx;

@@ -14,8 +14,17 @@ public class VentanaCertificado extends javax.swing.JFrame {
     /**
      * Creates new form VentanaCertificado
      */
-    public VentanaCertificado() {
+    public VentanaCertificado(String comuna, String provincia, String region, String nombre, int rut, char dv, String calle, int numeroCalle) {
         initComponents();
+        lblComuna.setText(comuna);
+        lblProvincia.setText(provincia);
+        lblRegion.setText(region);
+        lblNombre.setText(nombre);
+        lblCalle.setText(calle);
+        lblNumeroCalle.setText(Integer.toString(numeroCalle));
+        lblComuna2.setText(comuna);
+        lblRut.setText(Integer.toString(rut));
+        lblDv.setText(Character.toString(dv));
     }
 
     /**
@@ -28,10 +37,77 @@ public class VentanaCertificado extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        lblComuna2 = new javax.swing.JLabel();
+        lblNumeroCalle = new javax.swing.JLabel();
+        lblCalle = new javax.swing.JLabel();
+        lblDv = new javax.swing.JLabel();
+        lblRut = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblRegion = new javax.swing.JLabel();
+        lblProvincia = new javax.swing.JLabel();
+        lblComuna = new javax.swing.JLabel();
+        imagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblComuna2.setBackground(new java.awt.Color(0, 0, 0));
+        lblComuna2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblComuna2.setForeground(new java.awt.Color(0, 0, 0));
+        lblComuna2.setText("jlabel");
+        jPanel1.add(lblComuna2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, -1));
+
+        lblNumeroCalle.setBackground(new java.awt.Color(0, 0, 0));
+        lblNumeroCalle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblNumeroCalle.setForeground(new java.awt.Color(0, 0, 0));
+        lblNumeroCalle.setText("jLabel2");
+        jPanel1.add(lblNumeroCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, -1, -1));
+
+        lblCalle.setBackground(new java.awt.Color(0, 0, 0));
+        lblCalle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCalle.setForeground(new java.awt.Color(0, 0, 0));
+        lblCalle.setText("jLabel2");
+        jPanel1.add(lblCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
+
+        lblDv.setBackground(new java.awt.Color(0, 0, 0));
+        lblDv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDv.setForeground(new java.awt.Color(0, 0, 0));
+        lblDv.setText("jLabel2");
+        jPanel1.add(lblDv, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, -1, -1));
+
+        lblRut.setBackground(new java.awt.Color(0, 0, 0));
+        lblRut.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRut.setForeground(new java.awt.Color(0, 0, 0));
+        lblRut.setText("jLabel2");
+        jPanel1.add(lblRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
+
+        lblNombre.setBackground(new java.awt.Color(0, 0, 0));
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setText("jLabel2");
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+
+        lblRegion.setBackground(new java.awt.Color(0, 0, 0));
+        lblRegion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRegion.setForeground(new java.awt.Color(0, 0, 0));
+        lblRegion.setText("jLabel2");
+        jPanel1.add(lblRegion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+
+        lblProvincia.setBackground(new java.awt.Color(0, 0, 0));
+        lblProvincia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProvincia.setForeground(new java.awt.Color(0, 0, 0));
+        lblProvincia.setText("jLabel2");
+        jPanel1.add(lblProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 246, -1, -1));
+
+        lblComuna.setBackground(new java.awt.Color(0, 0, 0));
+        lblComuna.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblComuna.setForeground(new java.awt.Color(0, 0, 0));
+        lblComuna.setText("jlabel");
+        jPanel1.add(lblComuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
+
+        imagenFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Certificado_de_Residencia-1_2.png"))); // NOI18N
+        jPanel1.add(imagenFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,7 +126,18 @@ public class VentanaCertificado extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imagenFondo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCalle;
+    private javax.swing.JLabel lblComuna;
+    private javax.swing.JLabel lblComuna2;
+    private javax.swing.JLabel lblDv;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNumeroCalle;
+    private javax.swing.JLabel lblProvincia;
+    private javax.swing.JLabel lblRegion;
+    private javax.swing.JLabel lblRut;
     // End of variables declaration//GEN-END:variables
 }

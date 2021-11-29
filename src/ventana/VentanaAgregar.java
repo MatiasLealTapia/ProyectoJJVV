@@ -6,9 +6,9 @@
 package ventana;
 
 import clases.Usuario;
-
-
-
+import conexion.Registro;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -60,9 +60,11 @@ public class VentanaAgregar extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         cboComuna = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnAgregarPersona = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -134,11 +136,16 @@ public class VentanaAgregar extends javax.swing.JFrame {
 
         jLabel9.setText("Region");
 
-        cboRegion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Region de Valparaiso", " ", " " }));
+        cboRegion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Valparaiso" }));
+        cboRegion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboRegionActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Provincia");
 
-        cboProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Provincia de Valparaiso", "Provincia de Marga Marga", "Provincia de Petorca", "Provincia de Isla de Pascua", "Provincia de Los Andes", "Provincia de San Felipe de Aconcagua", "Provincia de San Antonio", "Provincia de Quillota" }));
+        cboProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Valparaiso", "Marga Marga", "Petorca", "Isla de Pascua", "Los Andes", "San Felipe de Aconcagua", "San Antonio", "Quillota" }));
 
         jLabel11.setText("Comuna");
 
@@ -151,23 +158,6 @@ public class VentanaAgregar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtRun, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtPnombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSnombre))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -206,7 +196,24 @@ public class VentanaAgregar extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(cboComuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(cboComuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtPnombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSnombre))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtRun, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,7 +225,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
                     .addComponent(txtRun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtPnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,11 +240,12 @@ public class VentanaAgregar extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtAgno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -258,54 +266,75 @@ public class VentanaAgregar extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Generar Certificado");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarPersona.setText("Agregar a Sistema");
+        btnAgregarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarPersonaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Agregar a Sistema");
+        jButton2.setText("Generar Certificado");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Salir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-programa-JJVV-trazado-pequeno.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 16, Short.MAX_VALUE)
+                        .addComponent(jLabel12)
+                        .addGap(23, 23, 23)))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnLimpiar)
+                            .addComponent(btnSalir))
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnAgregarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jButton1)
-                .addGap(78, 78, 78)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addGap(37, 37, 37)
-                .addComponent(jButton3)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(btnAgregarPersona)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimpiar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -314,7 +343,7 @@ public class VentanaAgregar extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -350,8 +379,8 @@ public class VentanaAgregar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApmaternoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       //// Rescatar y validar
+    private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
+        //// Rescatar y validar
         int rut;
         char dv;
         String pNombre;
@@ -359,70 +388,136 @@ public class VentanaAgregar extends javax.swing.JFrame {
         String aPaterno;
         String aMaterno;
         String correo;
-        String nacimiento;  
+        String clave;
+        String nacimiento;
         String calle;
         int numeroCalle;
         String region;
         String provincia;
         String comuna;
         String tempString;
-        
+
         rut = Integer.parseInt(txtRun.getText());
-        tempString= txtDv.getText();
+        tempString = txtDv.getText();
         dv = tempString.charAt(0);
         pNombre = txtPnombre.getText();
         sNombre = txtSnombre.getText();
         aPaterno = txtAppaterno.getText();
         aMaterno = txtApmaterno.getText();
         correo = txtCorreo.getText();
+        clave = "admin";
         calle = txtCalle.getText();
         numeroCalle = Integer.parseInt(txtNro.getText());
         region = cboRegion.getSelectedItem().toString();
         provincia = cboProvincia.getSelectedItem().toString();
         comuna = cboComuna.getSelectedItem().toString();
-        nacimiento = txtDia.getText() +"/"+txtMes.getText() +"/"+ txtAgno.getText();
-        
-    //Crear Usuario
-    
-    Usuario persona = new Usuario (rut, dv, pNombre, sNombre, aPaterno, aMaterno, correo, calle, nacimiento, region, provincia, comuna, calle, numeroCalle);
-    
-    //
-    
-    
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+        nacimiento = txtDia.getText() + "/" + txtMes.getText() + "/" + txtAgno.getText();
+
+        //Crear Usuario
+        Usuario persona = new Usuario(rut, dv, pNombre, sNombre, aPaterno, aMaterno, correo, clave, nacimiento, region, provincia, comuna, calle, numeroCalle);
+
+        //Agregar Usuario
+        Registro rg = new Registro();
+        if (rg.agregarPersona(persona)) {
+            JOptionPane.showMessageDialog(this, "Se agregó persona" + rut, "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "NO se agregó persona" + rut, "ERROR", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }//GEN-LAST:event_btnAgregarPersonaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        int rut;
+        char dv;
+        String pNombre;
+        String sNombre;
+        String aPaterno;
+        String aMaterno;
+        String nombre;
+        String correo;
+        String clave;
+        String nacimiento;
+        String calle;
+        int numeroCalle;
+        String region;
+        String provincia;
+        String comuna;
+        String tempString;
+
+        rut = Integer.parseInt(txtRun.getText());
+        tempString = txtDv.getText();
+        dv = tempString.charAt(0);
+        pNombre = txtPnombre.getText();
+        sNombre = txtSnombre.getText();
+        aPaterno = txtAppaterno.getText();
+        aMaterno = txtApmaterno.getText();
+        correo = txtCorreo.getText();
+        clave = "admin";
+        calle = txtCalle.getText();
+        numeroCalle = Integer.parseInt(txtNro.getText());
+        region = cboRegion.getSelectedItem().toString();
+        provincia = cboProvincia.getSelectedItem().toString();
+        comuna = cboComuna.getSelectedItem().toString();
+        nacimiento = txtDia.getText() + "/" + txtMes.getText() + "/" + txtAgno.getText();
+        nombre = pNombre + " " + sNombre + " " + aPaterno + " " + aMaterno;
+
+        JFrame ventanaCertificado = new VentanaCertificado(comuna, provincia, region, nombre, rut, dv, calle, numeroCalle);
+        ventanaCertificado.setLocationRelativeTo(null);
+        ventanaCertificado.setResizable(false);
+        ventanaCertificado.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMesActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtAgnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgnoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgnoActionPerformed
 
+    private void cboRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboRegionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboRegionActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtRun.setText("");
+        txtPnombre.setText("");
+        txtSnombre.setText("");
+        txtAppaterno.setText("");
+        txtApmaterno.setText("");
+        txtCalle.setText("");
+        txtCorreo.setText("");
+        txtDia.setText("");
+        txtMes.setText("");
+        txtAgno.setText("");
+        txtNro.setText("");
+        txtDv.setText("");
+        cboComuna.setSelectedIndex(0);
+        cboRegion.setSelectedIndex(0);
+        cboProvincia.setSelectedIndex(0);
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarPersona;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cboComuna;
     private javax.swing.JComboBox<String> cboProvincia;
     private javax.swing.JComboBox<String> cboRegion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

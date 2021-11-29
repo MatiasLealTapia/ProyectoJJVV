@@ -31,7 +31,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int rut, char dv, String pNombre, String sNombre, String aPaterno, String aMaterno, String correo, String clave, String nacimiento, String region, String provincia, String comuna,String calle, int numeroCalle) {
+    public Usuario(int rut, char dv, String pNombre, String sNombre, String aPaterno, String aMaterno, String correo, String clave, String nacimiento, String region, String provincia, String comuna, String calle, int numeroCalle) {
         this.rut = rut;
         this.dv = dv;
         this.pNombre = pNombre;
@@ -143,6 +143,7 @@ public class Usuario {
     public void setComuna(String comuna) {
         this.comuna = comuna;
     }
+
     public String getCalle() {
         return calle;
     }
@@ -164,7 +165,4 @@ public class Usuario {
         return "Usuario{" + "rut=" + rut + ", dv=" + dv + ", pNombre=" + pNombre + ", sNombre=" + sNombre + ", aPaterno=" + aPaterno + ", aMaterno=" + aMaterno + ", correo=" + correo + ", clave=" + clave + ", nacimiento=" + nacimiento + ", region=" + region + ", provincia=" + provincia + ", comuna=" + comuna + ", calle=" + calle + ", numeroCalle=" + numeroCalle + '}';
     }
 
-
-    
-    
-}   
+}

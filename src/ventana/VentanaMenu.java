@@ -29,33 +29,77 @@ public class VentanaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        miIniciarSesion = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        miAgregar = new javax.swing.JMenuItem();
+        miBuscar = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("File");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        miIniciarSesion.setText("Crear Certificado");
-        miIniciarSesion.setToolTipText("");
-        miIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LOGO-programa-JJVV-trazado-pequeno.png"))); // NOI18N
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("¡Bienvenido a Juntas de vecinos digital!");
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Click en el boton Acciones>Agregar Persona para comenzar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel3)))
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jMenu1.setText("Acciones");
+
+        miAgregar.setText("Agregar Persona");
+        miAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miIniciarSesionActionPerformed(evt);
+                miAgregarActionPerformed(evt);
             }
         });
-        jMenu1.add(miIniciarSesion);
+        jMenu1.add(miAgregar);
 
-        jMenuItem1.setText("Agregar Persona");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        miBuscar.setText("Buscar Personas");
+        miBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                miBuscarActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(miBuscar);
 
         miSalir.setText("Salir");
         miSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -67,20 +111,23 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 983, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -90,13 +137,13 @@ public class VentanaMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_miSalirActionPerformed
 
-    private void miIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miIniciarSesionActionPerformed
-        new VentanaGenerarCertificado().setVisible(true);
-    }//GEN-LAST:event_miIniciarSesionActionPerformed
+    private void miAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgregarActionPerformed
+        new VentanaAgregar().setVisible(true);
+    }//GEN-LAST:event_miAgregarActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       new VentanaAgregar().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void miBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBuscarActionPerformed
+        new VentanaListarPersonas().setVisible(true);
+    }//GEN-LAST:event_miBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,11 +181,14 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem miIniciarSesion;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem miAgregar;
+    private javax.swing.JMenuItem miBuscar;
     private javax.swing.JMenuItem miSalir;
     // End of variables declaration//GEN-END:variables
 }
