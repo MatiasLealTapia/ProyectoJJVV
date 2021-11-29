@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clases.JuntaVecinos;
+import clases.Usuario;
 
 /**
  *
@@ -21,9 +21,9 @@ import clases.JuntaVecinos;
 public class Registro {
 
     //listar todos
-    public List<JuntaVecinos> buscarTodosJJVV() {
+    public List<Usuario> buscarTodos() {
 
-        List<JuntaVecinos> lista = new ArrayList<>();
+        List<Usuario> lista = new ArrayList<>();
 
         try {
             ConexionBD conexion1 = new ConexionBD();
